@@ -1,0 +1,123 @@
+Git operations:
+
+1. git init:
+ Initializes a new Git repository in the current directory, creating the necessary folders and
+files to track changes.
+
+2. git clone \<repository>:
+ Creates a copy of a remote repository on your local machine, allowing you to work with the
+code and contribute changes.
+
+3. git add \<file>: Stages a file, preparing it to be committed. Use this command before
+committing changes.
+
+4. git commit -m "\<message>":
+ Commits the staged changes with a descriptive message, creating a snapshot of the code's
+current state.
+
+5. git status: Shows the status of your repository, including changes that are staged or not
+yet staged.
+
+6. git diff:
+ Displays the differences between the working directory and the last committed version,
+helping you see the changes you've made
+
+7. git log: 
+ Shows a chronological list of commits in the repository, providing information about
+authors, dates, and commit messages. 
+
+8. git pull:
+ Fetches changes from a remote repository and merges them into your current branch,
+ensuring you have the latest updates.
+
+9. git push: Sends your committed changes to a remote repository, updating it with your
+new code.
+
+10. git branch:
+ Lists all branches in the repository and highlights the branch you're currently on. Use "git
+branch \<name>" to create a new branch.
+
+11. git checkout \<branch>: Switches to a different branch, allowing you to work on a
+different part of the codebase.
+
+12. git merge \<branch>:
+ Integrates changes from one branch into another, combining the code and resolving
+conflicts if needed.
+
+13. git fetch:
+ Retrieves changes from a remote repository without automatically merging them, allowing
+you to review before merging.
+
+14. git stash:
+ Temporarily saves changes that you don't want to commit yet, allowing you to switch
+branches or pull changes without committing everything.
+
+15. git reset \<file>: Unstages a file that you previously staged using "git add," reversing
+the staging process.
+
+16. git remote -v: Lists all remote repositories associated with your local repository,
+showing their URLs.
+
+17. git rm \<file>: Removes a file from the working directory and stages its deletion for
+the next commit.
+
+18. git config: Configures Git settings such as your name, email, and preferred text editor.
+
+19. git remote add \<name> \<url>:
+ Adds a new remote repository with a given name and URL. This enables you to fetch and
+push changes to/from this remote.
+
+20. git remote remove \<name>:
+ Removes a remote repository from your local repository.
+
+21. git remote show \<name>: Provides information about a specific remote repository,
+including fetch and push URLs.
+
+22. git remote rename \<old-name> \<new-name>: Renames a remote repository from an
+old name to a new one.
+
+23. git remote set-url \<name> \<new-url>: Changes the URL of a remote repository.
+
+24. git tag:
+ Lists existing tags in the repository. Tags are used to mark specific points in the commit
+history.
+
+25. git tag -a \<tag-name> -m "\<message>": Creates an annotated tag with a message.
+Tags are often used to mark releases.
+
+26. git tag -d \<tag-name>: Deletes a local tag.
+
+27. git push \<remote> --tags: Pushes tags to a remote repository, making them available
+to others.
+
+28. git fetch \<remote>:
+ Retrieves changes from a specific remote repository without automatically merging them.
+It's often followed by a "git merge" to integrate the changes.
+
+29. git merge \<branch> --no-ff:
+ Performs a merge with a specified branch, creating a new merge commit even if the
+changes could be fast-forwarded.
+
+30. git rebase \<branch>
+Moves your local commits to the tip of a specified branch, resulting in a linear commit
+history. Use with caution when working with shared branches.
+
+31. git cherry-pick \<commit>: Applies the changes of a specific commit to your current
+branch.
+
+32. git revert \<commit>: Creates a new commit that undoes the changes introduced by a
+specified commit.
+
+33. git bisect:
+ Helps you find the commit that introduced a bug by performing a binary search through the
+commit history.
+
+34. git show \<commit>: Displays detailed information about a specific commit, including
+the changes introduced.
+
+35. git clean -n:
+ Shows a preview of untracked files and directories that can be removed using "git clean
+f."
+
+36. git config --global alias.\<shortcut> \<command>: Creates a custom alias to simplify
+frequently used Git commands. 
