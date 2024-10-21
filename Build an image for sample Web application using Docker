@@ -1,0 +1,80 @@
+1. Install Docker
+
+2. Create a Project Directory:
+Open the Command Prompt (CMD) or terminal>>>>>>
+mkdir my-web-app
+cd my-web-app
+
+3. Create server.js File (Web Application):
+Run this command to create the server.js file:>>>>>>
+notepad server.js
+
+In the Notepad window that opens, paste the following code:>>>>>>
+const http = require('http');
+
+const hostname = '0.0.0.0';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, Docker!');
+});
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+Save the file and close Notepad.
+
+
+5. Create a Dockerfile (Docker Image Instructions):
+
+Run this command to create the Dockerfile:>>>>>>
+notepad Dockerfile
+
+In the Notepad window that opens, paste the following content:>>>>>>
+# Use an official Node.js image from Docker Hub
+FROM node:14
+
+# Create and set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json into the container
+COPY package*.json ./
+
+# Install the dependencies inside the container
+RUN npm install
+
+# Copy the rest of the application code into the container
+COPY . .
+
+# Expose port 3000 on the container to the host machine
+EXPOSE 3000
+
+# Start the application
+CMD ["node", "server.js"]
+
+Save the file and close Notepad.
+
+6. Build the Docker Image:
+Ensure you're still in the my-web-app directory.
+Run the following command to build the Docker image:>>>>>>
+docker build -t my-web-app .
+
+
+7. Run the Docker Container:>>>>>>
+docker run -p 3000:3000 my-web-app
+
+8. Test the Web Application:
+Open a browser and go to http://localhost:3000, or use the following curl command to test it in the terminal:>>>>>>
+curl http://localhost:3000
+
+You should see the message Hello, Docker! displayed.
+
+10. Stop the Running Container:
+If you want to stop the container, press CTRL + C in the terminal where the container is running.>>>>> OR BY USING THIS COMMAND IF NOT WORK TO STOP
+docker stop <container-id>
+
+
+
